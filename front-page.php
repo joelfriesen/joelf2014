@@ -86,7 +86,7 @@
       <?php endwhile; wp_reset_postdata(); ?>
     </div>
     <div class="col last">
-      <h3  class="indexintro">Send me a quick hello!</h3>
+      <h3  class="indexintro">Say hello!</h3>
       <form class="uniForm" action="/fm.php" method="post">
         <input type="hidden" name="recipient" value="emailaddress" />
         <input type="hidden" name="subject" value=" - from joelf.com" />
