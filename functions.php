@@ -119,13 +119,22 @@ register_sidebar(array(
  'after_title' => '</h4>',
  ));
 
- add_action( 'init', 'register_my_menu' );
- function register_my_menu()
- {
- register_nav_menu( 'primary-menu', __( 'Primary Menu' ) );
- } 
+
+function register_my_menus() {
+  register_nav_menus(
+    array(
+      'primary-menu' => __( 'Primary Menu' ),
+      'secondary-menu' => __( 'Mobile Menu' )
+    )
+  );
+}
+add_action( 'init', 'register_my_menus' );
+
+wp_deregister_script('jquery');
+wp_register_script('jquery', ("//ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"), false, '1.8.1');
+wp_enqueue_script('jquery');
  
- function add_markup_pages($output) {
+function add_markup_pages($output) {
     $output= preg_replace('/menu-item/', 'first-menu-item', $output, 1);
 	$output=substr_replace($output, "last menu-item", strripos($output, "menu-item"), strlen("menu-item"));
     return $output;

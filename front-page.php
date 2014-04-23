@@ -1,27 +1,19 @@
 <?php get_header(); ?>
-
-<div id="nav">
-  <div class="center">
-    <?php wp_nav_menu( array( 'theme_location' => 'primary-menu' ) ); ?>
-  </div>
-</div>
 <script>
     $(function () {
-
       // Slideshow 2
       $(".rslides2").responsiveSlides({
         auto: true,
         pager: false,
         nav: true,
-		"timeout": 9000,
+		    "timeout": 9000,
         speed: 500,
         maxwidth: 960
       });     
-
     });
   </script>
 <div id="header">
-  <div class="center">
+  <div class="container">
     <div id="slider" class="rslides_container">
       <ul class="rslides rslides2">
         <li class="slide1">
@@ -30,7 +22,6 @@
         <li class="slide2">
           <div>I am the <strong>Lead instructor</strong> and <strong>creator</strong> of the <a href="http://camosun.ca/learn/programs/webfoundations/">Web Foundations Program</a> at Camosun College, Victoria B.C.</div>
         </li>
-
         <li class="slide3">
           <div>As the <strong>Web Template Coordinator</strong> at the <a href="http://uvic.ca">University of Victoria</a>, I organized massive web design projects.</div>
         </li>
@@ -44,34 +35,41 @@
     </div>
   </div>
 </div>
-<div id="footer">
-  <div class="center fourcols"><h3  class="indexintro">What's New?</h3>
-      <div class="col">
-        <?php
-          $the_query = new WP_Query( 'category_name=portfolio&posts_per_page=1' );
-          global $more;
-          while ( $the_query->have_posts() ) : $the_query->the_post(); $more = 0;?>
-          <div class="contentbox">
-            <h4 class="indexintro"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-            <?php the_content('',TRUE,''); ?>
-            <div class="excerpt"><span>…</span></div>
-          </div>
-          <a href="<?php the_permalink(); ?>" class="more-link">Read More</a>
-        <?php endwhile; wp_reset_postdata(); ?>
-      </div>
-      <div class="col">
-        <?php
-          $the_query = new WP_Query( 'category_name=portfolio&posts_per_page=1&offset=1' );
-          global $more;
-          while ( $the_query->have_posts() ) : $the_query->the_post(); $more = 0;?>
-          <div class="contentbox">
-            <h4 class="indexintro"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
-            <?php the_content('',TRUE,''); ?>
-            <div class="excerpt"><span>…</span></div>
-          </div>
-          <a href="<?php the_permalink(); ?>" class="more-link">Read More</a>
-        <?php endwhile; wp_reset_postdata(); ?>
+<div class="footer">
+  <div class="container fourcol">
+    <div class="col spanfour">
+      <h3  class="indexintro">What's New?</h3>
     </div>
+  </div>
+  <div class="container fourcol">
+    <div class="col">
+      <?php
+        $the_query = new WP_Query( 'category_name=portfolio&posts_per_page=1' );
+        global $more;
+        while ( $the_query->have_posts() ) : $the_query->the_post(); $more = 0;?>
+        <div class="contentbox">
+          <h4 class="indexintro"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+          <?php the_content('',TRUE,''); ?>
+          <div class="excerpt"><span>…</span></div>
+        </div>
+        <a href="<?php the_permalink(); ?>" class="more-link">Read More</a>
+      <?php endwhile; wp_reset_postdata(); ?>
+    </div>
+
+    <div class="col">
+      <?php
+        $the_query = new WP_Query( 'category_name=portfolio&posts_per_page=1&offset=1' );
+        global $more;
+        while ( $the_query->have_posts() ) : $the_query->the_post(); $more = 0;?>
+        <div class="contentbox">
+          <h4 class="indexintro"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
+          <?php the_content('',TRUE,''); ?>
+          <div class="excerpt"><span>…</span></div>
+        </div>
+        <a href="<?php the_permalink(); ?>" class="more-link">Read More</a>
+      <?php endwhile; wp_reset_postdata(); ?>
+    </div>
+
     <div class="col">
       <?php
           $the_query = new WP_Query( 'category_name=news&posts_per_page=1' );
@@ -85,8 +83,9 @@
           <a href="<?php the_permalink(); ?>" class="more-link">Read More</a>
       <?php endwhile; wp_reset_postdata(); ?>
     </div>
+
     <div class="col last">
-      <h3  class="indexintro">Say hello!</h3>
+      <h4 class="indexintro">Say Hello</h4>
       <form class="uniForm" action="/fm.php" method="post">
         <input type="hidden" name="recipient" value="emailaddress" />
         <input type="hidden" name="subject" value=" - from joelf.com" />
@@ -120,7 +119,8 @@
     </div>
   </div>
 </div>
-<div class="center footertext">
+
+<div class="container footertext">
   <?php dynamic_sidebar('footer') ?>
 </div>
 <?php wp_footer(); ?>

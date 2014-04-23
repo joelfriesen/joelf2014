@@ -3,7 +3,7 @@ Old IE Styles
 */
 
 .ie{
-	body{		background: lighten(rgba(73, 151, 187, 1), 20%);
+	body{
 	}
 	ul.menu li {
 		margin: 0 1em 0 0;
@@ -15,14 +15,6 @@ Old IE Styles
 
 	.topserach form input[type="submit"]{
 		font-size: 0px;
-	}
-	.navarea {
-	    ul.menu {margin:0;
-	      	li {
-		      	margin:0 $margin_width 0 0; 
-		      	width:$menuitem_width;
-	    	}
-	    }
 	}
 	#weather{ background:none;}
 	.rowholder .col {margin:0 0 2.5em 2.0em}
@@ -38,6 +30,15 @@ Old IE Styles
 	  }
 	  hr {display:block; padding:0; margin:0}
 	}
+	.navarea {
+	    ul.menu {
+	        margin:0; 
+	        li {
+	        	margin:0 $margin_width 0 0; 
+	        	width:$menuitem_width_cropped
+	        }
+	    }
+	}
 	.tags label{
 		border:none;
 		margin:0;
@@ -52,4 +53,12 @@ Old IE Styles
 	}
 	.flex-video{}
 	.main h3{margin: 2.6em 0 1em 0;}
+	.main-nav-check,
+	.mobile-nav,
+	#menu-mobile,
+	.toggle-menu,
+	.mobile-nav div{
+		display:none;
+		visibility:hidden;
+	}
 }

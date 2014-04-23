@@ -4,15 +4,13 @@ Template Name: About
 */
 ?>
 <?php get_header(); ?>
-
-<div id="nav">
-	<div class="center">
-		<?php wp_nav_menu( array( 'theme_location' => 'primary-menu' ) ); ?>
-	</div>
-</div>
 <div id="content">
-	<div class="center twocols">
-		<div  class="rightcol">
+	<div class="container fourcol">
+		<div  class="col">&nbsp;
+			<?php dynamic_sidebar('about-sidebar-area') ?>
+			<?php the_meta(); ?>
+		</div>
+		<div class="col spanthree">
 			<?php if (have_posts()) : ?>
 			  <?php while (have_posts()) : the_post(); ?>
 				<h2 class="indexintro"><?php the_title(); ?></h2>
@@ -23,11 +21,7 @@ Template Name: About
 			<?php else : ?>
 			  <h2><?php _e('Oops! Page not found!'); ?></h2>
 			  <p>I couldn't find any posts</p>
-			<?php endif; ?>			
-		</div>
-		<div class="leftcol">
-			<?php dynamic_sidebar('about-sidebar-area') ?>
-			<?php the_meta(); ?>
+			<?php endif; ?>	
 		</div>
 	</div>
 </div>

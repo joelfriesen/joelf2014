@@ -4,15 +4,18 @@ Template Name: News
 */
 ?>
 <?php get_header(); ?>
-
-<div id="nav">
-	<div class="center">
-		<?php wp_nav_menu( array( 'theme_location' => 'primary-menu' ) ); ?>
-	</div>
-</div>
 <div id="content">
-	<div class="center twocols">
-		<div  class="rightcol">
+	<div class="container fourcol">
+		<div  class="col">
+			<ul class="menu">
+				<li>
+					<?php previous_posts_link('Newer news'); ?>
+					<?php next_posts_link('Older news'); ?>
+				</li>
+			</ul>
+			<?php dynamic_sidebar('news-sidebar-area') ?>
+		</div>
+		<div class="col spanthree">
 			<h2 class="indexintro">News</h2>
 			<?php
 			$catname = wp_title('', false);
@@ -21,12 +24,12 @@ Template Name: News
 			global $more;
 			while ( $the_query->have_posts() ) : $the_query->the_post();
 			$more = 0; ?>
-			<div class="contentcontainer">
+			<div class="contentcontainer threecol">
 				<h3 class="indexintro"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-				<div class="smallcontentbox">
+				<div class=" col spantwo rowholder">
 					<?php the_content('',TRUE,''); ?>
 				</div>
-				<div class="metabox">
+				<div class="col">
 					<?php  the_meta(); ?>
 					<?php if ($pos=strpos($post->post_content, '<!--more-->')): ?>
 					<a href="<?php the_permalink(); ?>" class="more-link">Read more</a> 
@@ -47,15 +50,6 @@ Template Name: News
 				<div class="alignleft menu"><?php previous_posts_link('Newer news'); ?></div>
 				<div class="alignright menu"><?php next_posts_link('Older news'); ?></div>
 			</div>
-		</div>
-		<div class="leftcol">
-			<ul class="menu">
-				<li>
-					<?php previous_posts_link('Newer news'); ?>
-					<?php next_posts_link('Older news'); ?>
-				</li>
-			</ul>
-			<?php dynamic_sidebar('news-sidebar-area') ?>
 		</div>
 	</div>
 </div>

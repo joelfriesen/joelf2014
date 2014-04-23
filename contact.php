@@ -4,18 +4,12 @@ Template Name: Contact
 */
 ?>
 <?php get_header(); ?>
-
-<div id="nav">
-	<div class="center">
-		<?php wp_nav_menu( array( 'theme_location' => 'primary-menu' ) ); ?>
-	</div>
-</div>
 <div id="content">
-	<div class="center twocols">
-    <div class="leftcol">
+	<div class="container fourcol">
+		<div  class="col">&nbsp;
 			<?php dynamic_sidebar('contact-sidebar-area')?>
 		</div>
-		<div  class="rightcol">
+		<div class="col spanthree">
 			<h2 class="indexintro">Contact Joel</h2>
 			<form class="uniForm" action="/fm.php" method="post"><input type="hidden" name="recipient" value="emailaddress" />
 			<input type="hidden" name="subject" value=" - from joelf.com" />
@@ -38,7 +32,6 @@ Template Name: Contact
 			</div>
 			</form>
 		</div>
-		
 	</div>
 </div>
 <?php get_footer(); ?>

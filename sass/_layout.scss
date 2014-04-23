@@ -54,11 +54,10 @@ $margin_width:$master_margin_width;
 $fullcontainer_width:$papawidth;
 
     .container                      { width: $fullcontainer_width; margin: 0 auto; padding: 0; overflow: hidden;}
-    .container .col                 { float: left; margin: 0 0 $margin_width $margin_width; }
+    .container .col                 { float: left; margin: 0 0 0 $margin_width; }
     .container .nomargin            { margin:0;}
     .container .rowholder           { margin:0;}
     .container .rowholder .col:first-child           { margin:0 !important;}
-    .main                           { width: $fullcontainer_width - ($margin_width /2);}
 
 $onecol_width:($fullcontainer_width)-($margin_width*2);
 $twocol_width:($fullcontainer_width/2)-($margin_width*3/2);
@@ -67,7 +66,10 @@ $fourcol_width:($fullcontainer_width/4)-($margin_width*5/4);
 $fivecol_width:($fullcontainer_width/5)-($margin_width*6/5); 
 $sixcol_width:($fullcontainer_width/6)-($margin_width*7/6);   
    
-    .col{width:($fullcontainer_width/$number_of_columns)-($margin_width*($number_of_columns + 1)/$number_of_columns)}
+    .col{
+        width:($fullcontainer_width/$number_of_columns)-($margin_width*($number_of_columns + 1)/$number_of_columns);
+        
+    }
 
     .onecol .col                                  {width: $onecol_width;}
     .twocol .col                                  {width: $twocol_width;}
@@ -94,22 +96,88 @@ $sixcol_width:($fullcontainer_width/6)-($margin_width*7/6);
         .sixcol .spansix                          {width: $sixcol_width * 6 + ($margin_width * 5);}    
 /* Incedentals
 ================================================== */
-$menuitem_width:
-(
-    ($fullcontainer_width / $number_of_columns)
-    *
-    ($width_of_nav_in_columns / $number_of_nav_items)
-)
--
-($margin_width * ($number_of_columns + 1) / $number_of_columns)
+/* 
+For full bleed navigation. Place the nav outside of a col
+For cropped nav, place inside a col.
+
+If the nav needs to be in a spot that uses 4 of 5 columns you would build it out like this:
+
+
+<div class="fivecol">
+    <div class="col">
+        Logo or whatever
+    </div>
+    <nav class="menubar main-nav" id="main-nav">
+      <div class="container  navarea">
+        <?php wp_nav_menu( array( 'theme_location' => 'primary-menu' ) ); ?>
+      </div>
+    </nav>
+</div>
+
+This would butt the nav right up to the edge of the content in the previous column 
+For an example: look at bmp.saanich.ca
+
+<div class="fivecol">
+    <div class="col">
+        Logo or whatever
+    </div>
+    <div class="col spanfour">
+        <nav class="menubar main-nav" id="main-nav">
+          <div class="container navarea cropped">
+            <?php wp_nav_menu( array( 'theme_location' => 'primary-menu' ) ); ?>
+          </div>
+        </nav>
+    </div>
+</div>
+
+This example wouldplace the navigation inside a column, and give it the margin width on either side.
+*/
+.wp-caption {
+    width:  ($fourcol_width - 2) !important;
+    margin: 0 $margin_width 0 0 ;
+}
+
+
+$usablecolwidth: 
+$fullcontainer_width - (($margin_width * $number_of_columns) + $margin_width) 
+;
+
+$acolumnwidth:
+$usablecolwidth/$number_of_columns
+;
+
+$navcoltotalfull:
+($acolumnwidth * $width_of_nav_in_columns) + ($margin_width * ($width_of_nav_in_columns + 1))
+;
+$navcoltotalcropped:
+($acolumnwidth * $width_of_nav_in_columns) + ($margin_width * ($width_of_nav_in_columns - 1))
+;
+
+$menuitem_width_full:
+($navcoltotalfull - ($margin_width * ($number_of_nav_items - 1))) / $number_of_nav_items 
+;
+
+$menuitem_width_cropped:
+($navcoltotalcropped - ($margin_width * ($number_of_nav_items - 1))) / $number_of_nav_items 
 ;
 .navarea {
-    ul.menu {margin:0;
-      li {margin:0 $margin_width 0 0; width:$menuitem_width}
-      li:last-child{margin:0}
-      ul.sub-menu{ width:$menuitem_width * 2 + $margin_width;
-      }
+    ul.menu {
+        margin:0; 
+        width:$navcoltotalfull;
+        li {margin:0 $margin_width 0 0; width:$menuitem_width_full}
+        li:last-child{margin:0}
+        ul.sub-menu{ width:$menuitem_width_full * 2 + $margin_width;}
     }
+}
+.navarea.cropped{
+    ul.menu {
+        margin:0; 
+        width:$navcoltotalcropped;
+        li {margin:0 $margin_width 0 0; width:$menuitem_width_cropped}
+        li:last-child{margin:0}
+        ul.sub-menu{ width:$menuitem_width_cropped * 2 + $margin_width;}
+    }
+
 }
 /*
  _______  _______  _______  _______ 
@@ -169,24 +237,51 @@ $menuitem_width:
         .sixcol .spanfive                         {width: $sixcol_width * 5 + ($margin_width * 4);}
         .sixcol .spansix                          {width: $sixcol_width * 6 + ($margin_width * 5);}
 
-    
-$menuitem_width:
+.wp-caption {
+    width:  ($fourcol_width - 2) !important;
+    margin: 0 $margin_width 0 0 ;
+}  
+    $usablecolwidth: 
+    $fullcontainer_width - (($margin_width * $number_of_columns) + $margin_width) 
+    ;
 
-(
-    ($fullcontainer_width / $number_of_columns)
-    *
-    ($width_of_nav_in_columns / $number_of_nav_items)
-)
--
-($margin_width * ($number_of_columns + 1) / $number_of_columns)
-;
+    $acolumnwidth:
+    $usablecolwidth/$number_of_columns
+    ;
 
-.navarea {
-    ul.menu {margin:0;
-      li {margin:0 $margin_width 0 0; width:$menuitem_width}
-      ul.sub-menu{ width:$menuitem_width * 2 + $margin_width;}
+    $navcoltotalfull:
+    ($acolumnwidth * $width_of_nav_in_columns) + ($margin_width * ($width_of_nav_in_columns + 1))
+    ;
+    $navcoltotalcropped:
+    ($acolumnwidth * $width_of_nav_in_columns) + ($margin_width * ($width_of_nav_in_columns - 1))
+    ;
+
+    $menuitem_width_full:
+    ($navcoltotalfull - ($margin_width * ($number_of_nav_items - 1))) / $number_of_nav_items 
+    ;
+
+    $menuitem_width_cropped:
+    ($navcoltotalcropped - ($margin_width * ($number_of_nav_items - 1))) / $number_of_nav_items 
+    ;
+    .navarea {
+        ul.menu {
+            margin:0; 
+            width:$navcoltotalfull;
+            li {margin:0 $margin_width 0 0; width:$menuitem_width_full}
+            li:last-child{margin:0}
+            ul.sub-menu{ width:$menuitem_width_full * 2 + $margin_width;}
+        }
     }
-}
+    .navarea.cropped{
+        ul.menu {
+            margin:0; 
+            width:$navcoltotalcropped;
+            li {margin:0 $margin_width 0 0; width:$menuitem_width_cropped}
+            li:last-child{margin:0}
+            ul.sub-menu{ width:$menuitem_width_cropped * 2 + $margin_width;}
+        }
+
+    }
 
 }
 /* #Tablet (Portrait)
@@ -245,4 +340,8 @@ _________ _______  _______  _
         .sixcol .spansix.rowholder                ,
         
     .container .fullwidth           {width: $onecol_width;}
+.wp-caption {
+    width:  99% !important;
+    margin: 0 ;
+}
 }

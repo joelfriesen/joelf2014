@@ -1,24 +1,27 @@
 <?php get_header(); ?>
-
-<div id="nav">
-	<div class="center">
-		<?php wp_nav_menu( array( 'theme_location' => 'primary-menu' ) ); ?>
-	</div>
-</div>
 <div id="content">
-	<div class="center twocols">
-		<div  class="rightcol">
+	<div class="container fourcol">
+		<div  class="col">
+			<ul class="menu">
+				<li>
+					<?php previous_posts_link('Newer news'); ?>
+					<?php next_posts_link('Older news'); ?>
+				</li>
+			</ul>
+			<?php dynamic_sidebar('news-sidebar-area') ?>
+		</div>
+		<div class="col spanthree">
 			<h2 class="indexintro">News</h2>
 			<?php if (have_posts()) : ?>
 			<?php while (have_posts()) : the_post(); ?>
-			<div class="contentcontainer">
+			<div class="contentcontainer threecol">
 				<h3 class="indexintro"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
 				<?php if ($pos=strpos($post->post_content, '<!--more-->')): ?>
-				<div class="smallcontentbox">
+				<div class=" col spantwo rowholder">
 					<?php the_time('F jS, Y') ?>
 					<?php the_content('',TRUE,''); ?>
 				</div>
-				<div class="metabox">
+				<div class="col">
 					<?php if ( get_post_meta($post->ID, 'date', true) ) : ?>
 					 
 					<?php endif; ?>
@@ -35,15 +38,6 @@
 				<div class="alignleft menu"><?php previous_posts_link('Newer news'); ?></div>
 				<div class="alignright menu"><?php next_posts_link('Older news'); ?></div>
 			</div>
-		</div>
-		<div class="leftcol">
-			<ul class="menu">
-				<li>
-					<?php previous_posts_link('Newer news'); ?>
-					<?php next_posts_link('Older news'); ?>
-				</li>
-			</ul>
-			<?php dynamic_sidebar('news-sidebar-area') ?>
 		</div>
 	</div>
 </div>

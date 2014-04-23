@@ -1,13 +1,12 @@
 <?php get_header(); ?>
 
-<div id="nav">
-	<div class="center">
-		<?php wp_nav_menu( array( 'theme_location' => 'primary-menu' ) ); ?>
-	</div>
-</div>
 <div id="content">
-	<div class="center twocols">
-		<div class="rightcol">
+	<div class="container fourcol">
+		<div  class="col">
+			<?php if ( !function_exists('dynamic_sidebar')    || !dynamic_sidebar('page-sidebar-area') ) : ?>
+			<?php endif; ?>
+		</div>
+		<div class="col spanthree">
 			<?php if (have_posts()) : ?>
 			  <?php while (have_posts()) : the_post(); ?>
 				<h2 class="indexintro"><?php the_title(); ?></h2>
@@ -18,10 +17,6 @@
 			<?php else : ?>
 			  <h2><?php _e('Oops! Page not found!'); ?></h2>
 			  <p>I couldn't find any posts</p>
-			<?php endif; ?>
-		</div>
-		<div class="leftcol">
-			<?php if ( !function_exists('dynamic_sidebar')    || !dynamic_sidebar('page-sidebar-area') ) : ?>
 			<?php endif; ?>
 		</div>
 	</div>
