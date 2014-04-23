@@ -5,7 +5,7 @@ Template Name: News
 ?>
 <?php get_header(); ?>
 <div id="content">
-	<div class="container fourcol">
+	<div class="container col4">
 		<div  class="col">
 			<ul class="menu">
 				<li>
@@ -15,7 +15,7 @@ Template Name: News
 			</ul>
 			<?php dynamic_sidebar('news-sidebar-area') ?>
 		</div>
-		<div class="col spanthree">
+		<div class="col span3">
 			<h2 class="indexintro">News</h2>
 			<?php
 			$catname = wp_title('', false);

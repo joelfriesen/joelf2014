@@ -36,12 +36,12 @@
   </div>
 </div>
 <div class="footer">
-  <div class="container fourcol">
-    <div class="col spanfour">
+  <div class="container col4">
+    <div class="col span4">
       <h3  class="indexintro">What's New?</h3>
     </div>
   </div>
-  <div class="container fourcol">
+  <div class="container col4">
     <div class="col">
       <?php
         $the_query = new WP_Query( 'category_name=portfolio&posts_per_page=1' );

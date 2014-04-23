@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <div id="content">
-	<div class="container fourcol">
+	<div class="container col4">
 		<div  class="col">&nbsp;
 			<?php dynamic_sidebar('news-sidebar-area') ?>
 			<?php 
@@ -24,7 +24,7 @@
 			}
 			?>
 		</div>
-		<div class="col spanthree">
+		<div class="col span3">
 			<?php if (have_posts()) : ?>
 			  <?php while (have_posts()) : the_post(); ?>
 				<h2 class="indexintro"><?php the_title(); ?></h2>

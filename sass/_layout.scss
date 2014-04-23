@@ -59,41 +59,19 @@ $fullcontainer_width:$papawidth;
     .container .rowholder           { margin:0;}
     .container .rowholder .col:first-child           { margin:0 !important;}
 
-$onecol_width:($fullcontainer_width)-($margin_width*2);
-$twocol_width:($fullcontainer_width/2)-($margin_width*3/2);
-$threecol_width:($fullcontainer_width/3)-($margin_width*4/3);
-$fourcol_width:($fullcontainer_width/4)-($margin_width*5/4); 
-$fivecol_width:($fullcontainer_width/5)-($margin_width*6/5); 
-$sixcol_width:($fullcontainer_width/6)-($margin_width*7/6);   
-   
-    .col{
-        width:($fullcontainer_width/$number_of_columns)-($margin_width*($number_of_columns + 1)/$number_of_columns);
-        
+@for $i from 1 through 12 {
+    $colwidth: ($fullcontainer_width/$i)-($margin_width*(($i+1)/$i));
+    .col#{$i} { 
+        .col {width: $colwidth;
+            @for $i from 2 through $i {
+                &.span#{$i} {
+                    width: ($colwidth*$i)+($margin_width*($i - 1));
+                }
+            }
+        }
     }
+}
 
-    .onecol .col                                  {width: $onecol_width;}
-    .twocol .col                                  {width: $twocol_width;}
-    .threecol .col                                {width: $threecol_width;} 
-        .threecol .spantwo                        {width: $threecol_width * 2 + $margin_width;}
-        .threecol .spanthree                      {width: $threecol_width * 3 + $margin_width * 2;}
-              
-    .fourcol .col                                 {width: $fourcol_width;}
-        .fourcol .spantwo                         {width: $fourcol_width * 2 + $margin_width;}
-        .fourcol .spanthree                       {width: $fourcol_width * 3 + ($margin_width * 2);}
-        .fourcol .spanfour                        {width: $fourcol_width * 4 + ($margin_width * 3);}
-                  
-    .fivecol .col                                 {width: $fivecol_width;}
-        .fivecol .spantwo                         {width: $fivecol_width * 2 + $margin_width;}
-        .fivecol .spanthree                       {width: $fivecol_width * 3 + ($margin_width * 2);}
-        .fivecol .spanfour                        {width: $fivecol_width * 4 + ($margin_width * 3);}
-        .fivecol .spanfive                        {width: $fivecol_width * 5 + ($margin_width * 4);}
-          
-    .sixcol .col                                  {width: $sixcol_width;}
-        .sixcol .spantwo                          {width: $sixcol_width * 2 + $margin_width;}
-        .sixcol .spanthree                        {width: $sixcol_width * 3 + ($margin_width * 2);}
-        .sixcol .spanfour                         {width: $sixcol_width * 4 + ($margin_width * 3);}
-        .sixcol .spanfive                         {width: $sixcol_width * 5 + ($margin_width * 4);}
-        .sixcol .spansix                          {width: $sixcol_width * 6 + ($margin_width * 5);}    
 /* Incedentals
 ================================================== */
 /* 
@@ -133,7 +111,7 @@ For an example: look at bmp.saanich.ca
 This example wouldplace the navigation inside a column, and give it the margin width on either side.
 */
 .wp-caption {
-    width:  ($fourcol_width - 2) !important;
+    width:  (100% - 2) !important;
     margin: 0 $margin_width 0 0 ;
 }
 
@@ -204,41 +182,21 @@ $menuitem_width_cropped:
     The main ares needs to be smaller than the header*/
     .main                           { width: $fullcontainer_width - ($margin_width /2);}
 
-    $onecol_width:($fullcontainer_width)-($margin_width*2);
-    $twocol_width:($fullcontainer_width/2)-($margin_width*3/2);
-    $threecol_width:($fullcontainer_width/3)-($margin_width*4/3);
-    $fourcol_width:($fullcontainer_width/4)-($margin_width*5/4); 
-    $fivecol_width:($fullcontainer_width/5)-($margin_width*6/5); 
-    $sixcol_width:($fullcontainer_width/6)-($margin_width*7/6);  
-
-    .col{width:($fullcontainer_width/$number_of_columns)-($margin_width*($number_of_columns + 1)/$number_of_columns)}
-
-    .onecol .col                                  {width: $onecol_width;}
-    .twocol .col                                  {width: $twocol_width;}
-    .threecol .col                                {width: $threecol_width;} 
-        .threecol .spantwo                        {width: $threecol_width * 2 + $margin_width;}
-        .threecol .spanthree                      {width: $threecol_width * 3 + $margin_width * 2;}
-
-    .fourcol .col                                 {width: $fourcol_width;}
-        .fourcol .spantwo                         {width: $fourcol_width * 2 + $margin_width;}
-        .fourcol .spanthree                       {width: $fourcol_width * 3 + ($margin_width * 2);}
-        .fourcol .spanfour                        {width: $fourcol_width * 4 + ($margin_width * 3);}
-                  
-    .fivecol .col                                 {width: $fivecol_width;}
-        .fivecol .spantwo                         {width: $fivecol_width * 2 + $margin_width;}
-        .fivecol .spanthree                       {width: $fivecol_width * 3 + ($margin_width * 2);}
-        .fivecol .spanfour                        {width: $fivecol_width * 4 + ($margin_width * 3);}
-        .fivecol .spanfive                        {width: $fivecol_width * 5 + ($margin_width * 4);}
-          
-    .sixcol .col                                  {width: $sixcol_width;}
-        .sixcol .spantwo                          {width: $sixcol_width * 2 + $margin_width;}
-        .sixcol .spanthree                        {width: $sixcol_width * 3 + ($margin_width * 2);}
-        .sixcol .spanfour                         {width: $sixcol_width * 4 + ($margin_width * 3);}
-        .sixcol .spanfive                         {width: $sixcol_width * 5 + ($margin_width * 4);}
-        .sixcol .spansix                          {width: $sixcol_width * 6 + ($margin_width * 5);}
+   @for $i from 1 through 12 {
+    $colwidth: ($fullcontainer_width/$i)-($margin_width*(($i+1)/$i));
+    .col#{$i} { 
+        .col {width: $colwidth;
+            @for $i from 2 through $i {
+                &.span#{$i} {
+                    width: ($colwidth*$i)+($margin_width*($i - 1));
+                }
+            }
+        }
+    }
+}
 
 .wp-caption {
-    width:  ($fourcol_width - 2) !important;
+    width:  (100% - 2) !important;
     margin: 0 $margin_width 0 0 ;
 }  
     $usablecolwidth: 
@@ -296,52 +254,34 @@ _________ _______  _______  _
  
 */
 @media only screen and (min-width:0) and (max-width: $teenbreak) {
-    $fullcontainer_width:$teenwidth;
     $margin_width:5%;
-    
-    $onecol_width:$fullcontainer_width;
-    .container                      { width: $fullcontainer_width; margin: 0 auto; padding: 0; overflow: hidden; }
+    .container{
+        width: $teenwidth; 
+        margin: 0 auto; 
+        padding: 0; 
+        overflow: hidden; 
+    }
     .container .col                 { float: left; margin: 0 0 $margin_width $margin_width;}
     .container .nomargin            { margin:0;}
     .container .rowholder           { margin:0;}
     .container .rowholder .col,
     .container .rowholder           { margin:0 !important; width:100% !important;}
 
-      .onecol .col                                ,
-    .twocol .col                                  ,
-    .threecol .col                                ,
-        .threecol .spantwo                        ,
-              
-    .fourcol .col                                 ,
-        .fourcol .spantwo                         ,
-        .fourcol .spanthree                       ,
-                  
-    .fivecol .col                                 ,
-        .fivecol .spantwo                         ,
-        .fivecol .spanthree                       ,
-        .fivecol .spanfour                        ,
-        .fivecol .spanfive                        ,
-        .fivecol .spantwo.rowholder               ,
-        .fivecol .spanthree.rowholder             ,
-        .fivecol .spanfour.rowholder              ,
-        .fivecol .spanfour.rowholder              ,
+    @for $i from 1 through 12 {
+    .col#{$i} { 
+        .col {width: $teenwidth;
+            @for $i from 2 through $i {
+                &.span#{$i} {
+                    width: $teenwidth;
+                }
+            }
+        }
+    }
+}
         
-    .sixcol .col                                  ,
-        .sixcol .spantwo                          ,
-        .sixcol .spanthree                        ,
-        .sixcol .spanfour                         ,
-        .sixcol .spanfive                         ,
-        .sixcol .spansix                          ,
-
-        .sixcol .spantwo.rowholder                ,
-        .sixcol .spanthree.rowholder              ,
-        .sixcol .spanfour.rowholder               ,
-        .sixcol .spanfive.rowholder               ,
-        .sixcol .spansix.rowholder                ,
-        
-    .container .fullwidth           {width: $onecol_width;}
+.container .fullwidth           {width:  $teenwidth;}
 .wp-caption {
     width:  99% !important;
     margin: 0 ;
-}
+    }
 }

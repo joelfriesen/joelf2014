@@ -5,11 +5,11 @@ Template Name: Contact
 ?>
 <?php get_header(); ?>
 <div id="content">
-	<div class="container fourcol">
+	<div class="container col4">
 		<div  class="col">&nbsp;
 			<?php dynamic_sidebar('contact-sidebar-area')?>
 		</div>
-		<div class="col spanthree">
+		<div class="col span3">
 			<h2 class="indexintro">Contact Joel</h2>
 			<form class="uniForm" action="/fm.php" method="post"><input type="hidden" name="recipient" value="emailaddress" />
 			<input type="hidden" name="subject" value=" - from joelf.com" />

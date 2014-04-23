@@ -80,11 +80,11 @@
     <?php wp_nav_menu(array( 'theme_location' => 'secondary-menu', 'container_class' => 'container' ) );?>
   </nav> 
   <div id="logo">
-    <div class="container fourcol">
+    <div class="container col4">
       <div class="col">
         &nbsp;
       </div>
-      <div class="col spanthree">
+      <div class="col span3">
         <h1><a href="<?php bloginfo('url'); ?>"><span class="blue">Joel</span> <span class="orange">Friesen</span></a></h1>
         <h2 class="grey">
           <?php bloginfo('description'); ?>
@@ -94,7 +94,7 @@
     </div>
   </div> 
   <nav class="menubar main-nav" id="main-nav">
-    <div class="container navarea fancybuttons cropped onecol">
+    <div class="container navarea fancybuttons cropped col1">
       <div class="col">
         <?php wp_nav_menu( array( 'theme_location' => 'primary-menu' ) ); ?>
       </div>

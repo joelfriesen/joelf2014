@@ -6,11 +6,11 @@ Template Name: Portfolio
 <?php get_header(); ?>
 
 <div id="content">
-	<div class="container fourcol">
+	<div class="container col4">
 		<div  class="col">&nbsp;
 			<?php dynamic_sidebar('portfolio-sidebar-area') ?>
 		</div>
-		<div class="col spanthree">
+		<div class="col span3">
 		<h2 class="indexintro">Portfolio</h2>
 		 <?php
 			 $the_query = new WP_Query( 'category_name=portfolio&posts_per_page=20' );

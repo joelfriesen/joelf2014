@@ -1,53 +1,54 @@
-
-
-$g-cols: 12;
-$g-col-width: 80px;
-$g-col-margin: 16px;
-
-%col {
-    background-color: #ccc;
-    display: inline-block;
-    margin: 0 ($g-col-margin / 2) $g-col-margin;
-    vertical-align: top;
-}
-@mixin col($i) {
-    width: (($g-col-width + $g-col-margin) * $i) - $g-col-margin;
-}
-
-And this is the optional loop:
-
-@for $i from 1 through $g-cols {
-    .col#{$i} {
-        @extend %col;
-        @include col($i);
-    }
-}
-
-@mixin col-reset {
-    display: block;
-    float: none;
-    width: auto;
-}
-
-main {
-    section {
-        &.content {
-            @extend %col;
-            @include col(4);
-            @include breakpoint(small) { 
-                @include col-reset;
-            } 
-        }
-        &.selection {
-            @extend %col;
-            @include col(2);
-            float: right;
-            @include breakpoint(xlarge) {
-                @include col(4);
-            }
-            @include breakpoint(medium) { 
-                @include col-reset;
-            }
-        }
-    }
-}
+//
+//
+//$g-cols: 12;
+//$g-col-width: 80px;
+//$g-col-margin: 16px;
+//
+//%col {
+//    background-color: #ccc;
+//    display: inline-block;
+//    margin: 0 ($g-col-margin / 2) $g-col-margin;
+//    vertical-align: top;
+//}
+//@mixin col($i) {
+//    width: (($g-col-width + $g-col-margin) * $i) - $g-col-margin;
+//}
+//
+//And this is the optional loop:
+//
+//@for $i from 1 through $g-cols {
+//    .col#{$i} {
+//        @extend %col;
+//        @include col($i);
+//    }
+//}
+//
+//@mixin col-reset {
+//    display: block;
+//    float: none;
+//    width: auto;
+//}
+//
+//main {
+//    section {
+//        &.content {
+//            @extend %col;
+//            @include col(4);
+//            @include breakpoint(small) { 
+//                @include col-reset;
+//            } 
+//        }
+//        &.selection {
+//            @extend %col;
+//            @include col(2);
+//            float: right;
+//            @include breakpoint(xlarge) {
+//                @include col(4);
+//            }
+//            @include breakpoint(medium) { 
+//                @include col-reset;
+//            }
+//        }
+//    }
+//}
+//
