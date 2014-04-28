@@ -2,7 +2,7 @@
 Theme Name: joelf2014
 Theme URI: https://joelf.com/
 Description: Joelf.com's default theme
-Version: 2
+Version: 3.0
 Author: Joel Friesen 
 Author URI: http://joelf.com/
 */
@@ -288,11 +288,11 @@ h3.indexintro {
 
 .footer {
     background: #FFF;
-    background-image: -webkit-linear-gradient(top, #eeeeee, white);
-    background-image: -moz-linear-gradient(top, #eeeeee, white);
-    background-image: -ms-linear-gradient(top, #eeeeee, white);
-    background-image: -o-linear-gradient(top, #eeeeee, white);
-    background-image: linear-gradient(top, #eeeeee, white);
+    background-image: -webkit-linear-gradient(top, #eee, #fff 20%);
+    background-image: -moz-linear-gradient(top, #eee, #fff 20%);
+    background-image: -ms-linear-gradient(top, #eee, #fff 20%);
+    background-image: -o-linear-gradient(top, #eee, #fff 20%);
+    background-image: linear-gradient(top, #eee, #fff 20%);
     .contentbox {
         height: 415px;
         @media only screen and (min-width: 0) and (max-width: $teenbreak) {

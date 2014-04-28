@@ -17,9 +17,9 @@ Template Name: Portfolio
 			 global $more;
 			 while ( $the_query->have_posts() ) : $the_query->the_post();
 			 $more = 0; ?>
-			 <div class="contentcontainer threecol">
+			 <div class="contentcontainer 3col">
 				<h3 class="indexintro"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-				<div class=" col spantwo rowholder">
+				<div class=" col span2 rowholder">
 					<?php the_content('',TRUE,''); ?>
 				</div>
 				<div class=" col">

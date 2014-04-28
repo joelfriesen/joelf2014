@@ -59,7 +59,7 @@ $fullcontainer_width:$papawidth;
     .container .rowholder           { margin:0;}
     .container .rowholder .col:first-child           { margin:0 !important;}
 
-@for $i from 1 through 12 {
+@for $i from 1 through $number_of_columns {
     $colwidth: ($fullcontainer_width/$i)-($margin_width*(($i+1)/$i));
     .col#{$i} { 
         .col {width: $colwidth;
@@ -70,6 +70,9 @@ $fullcontainer_width:$papawidth;
             }
         }
     }
+}
+.wp-caption {
+    width:  (($fullcontainer_width/$number_of_columns)-($margin_width)*1.5) !important;
 }
 
 /* Incedentals
@@ -110,10 +113,7 @@ For an example: look at bmp.saanich.ca
 
 This example wouldplace the navigation inside a column, and give it the margin width on either side.
 */
-.wp-caption {
-    width:  (100% - 2) !important;
-    margin: 0 $margin_width 0 0 ;
-}
+
 
 
 $usablecolwidth: 
@@ -178,27 +178,23 @@ $menuitem_width_cropped:
     .container .nomargin            { margin:0;}
     .container .rowholder           { margin:0;}
     .container .rowholder .col:first-child           { margin:0 !important;}
-    /*just for this particular design. 
-    The main ares needs to be smaller than the header*/
-    .main                           { width: $fullcontainer_width - ($margin_width /2);}
 
-   @for $i from 1 through 12 {
+   @for $i from 1 through $number_of_columns {
     $colwidth: ($fullcontainer_width/$i)-($margin_width*(($i+1)/$i));
     .col#{$i} { 
         .col {width: $colwidth;
             @for $i from 2 through $i {
                 &.span#{$i} {
                     width: ($colwidth*$i)+($margin_width*($i - 1));
+                    }
                 }
             }
         }
     }
-}
 
-.wp-caption {
-    width:  (100% - 2) !important;
-    margin: 0 $margin_width 0 0 ;
-}  
+    .wp-caption {
+    width:  (($fullcontainer_width/$number_of_columns)-($margin_width)*1.5) !important;
+    }
     $usablecolwidth: 
     $fullcontainer_width - (($margin_width * $number_of_columns) + $margin_width) 
     ;
@@ -255,6 +251,10 @@ _________ _______  _______  _
 */
 @media only screen and (min-width:0) and (max-width: $teenbreak) {
     $margin_width:5%;
+    .wp-caption {
+    width:  99% !important;
+    margin: 0 ;
+    }
     .container{
         width: $teenwidth; 
         margin: 0 auto; 
@@ -267,21 +267,17 @@ _________ _______  _______  _
     .container .rowholder .col,
     .container .rowholder           { margin:0 !important; width:100% !important;}
 
-    @for $i from 1 through 12 {
-    .col#{$i} { 
-        .col {width: $teenwidth;
-            @for $i from 2 through $i {
-                &.span#{$i} {
-                    width: $teenwidth;
+    @for $i from 1 through $number_of_columns {
+        .col#{$i} { 
+            .col {width: $teenwidth;
+                @for $i from 2 through $i {
+                    &.span#{$i} {
+                        width: $teenwidth;
+                    }
                 }
             }
         }
     }
-}
         
-.container .fullwidth           {width:  $teenwidth;}
-.wp-caption {
-    width:  99% !important;
-    margin: 0 ;
-    }
+    .container .fullwidth           {width:  $teenwidth;}
 }
