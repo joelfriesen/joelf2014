@@ -7,7 +7,7 @@ Template Name: Portfolio
 
 <div id="content">
 	<div class="container col4">
-		<div  class="col">&nbsp;
+		<div  class="col">
 			<?php dynamic_sidebar('portfolio-sidebar-area') ?>
 		</div>
 		<div class="col span3">

@@ -6,7 +6,7 @@ Template Name: Contact
 <?php get_header(); ?>
 <div id="content">
 	<div class="container col4">
-		<div  class="col">&nbsp;
+		<div  class="col">
 			<?php dynamic_sidebar('contact-sidebar-area')?>
 		</div>
 		<div class="col span3">
@@ -14,7 +14,6 @@ Template Name: Contact
 			<form class="uniForm" action="/fm.php" method="post"><input type="hidden" name="recipient" value="emailaddress" />
 			<input type="hidden" name="subject" value=" - from joelf.com" />
 			<input type="hidden" name="print_blank_fields" value="flase" />
-			<input type="hidden" name="required" value="subject_prefix,email" />
 			<input type="hidden" name="alias" value="email=E-mail Address,subject_prefix=Your Name,comments=Comments" />
 			<input type="hidden" name="redirect" value="/thankyou/" />
 			<input type="hidden" name="frompage" value="contact" />

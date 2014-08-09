@@ -43,10 +43,10 @@
 }
 
 .wp-caption-text {
-	color: #BBB;
+	color: #222;
 	text-align: center;
 	padding: 0 3%;
-	margin: 0;
+	margin: .5em 0 .9em 0;
 	display: block;
 }
 
@@ -262,13 +262,13 @@ a#cancel-comment-reply-link:hover {
 .excerpt {
 	$from:rgba(238, 238, 238, 0) 0%;
 	$to:rgba(255, 255, 255, 0) 0%;
-	background: -moz-linear-gradient(top, rgba(238, 238, 238, 0) 0%, white 79%, white 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(238, 238, 238, 0)), color-stop(79%, white), color-stop(100%, white));
-	background: -webkit-linear-gradient(top, rgba(238, 238, 238, 0) 0%, white 79%, white 100%);
-	background: -o-linear-gradient(top, rgba(238, 238, 238, 0) 0%, white 79%, white 100%);
-	background: -ms-linear-gradient(top, rgba(238, 238, 238, 0) 0%, white 79%, white 100%);
-	background: linear-gradient(to bottom, rgba(238, 238, 238, 0) 0%, white 79%, white 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
+
+	background: -moz-linear-gradient(top, rgba(238, 238, 238, 0) 64%, white 99%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(238, 238, 238, 0)), color-stop(99%, white));
+	background: -webkit-linear-gradient(top, rgba(238, 238, 238, 0) 64%, white 99%);
+	background: -o-linear-gradient(top, rgba(238, 238, 238, 0) 64%, white 99%);
+	background: -ms-linear-gradient(top, rgba(238, 238, 238, 0) 64%, white 99%);
+	background: linear-gradient(to bottom, rgba(238, 238, 238, 0) 64%, white 99%);
 	position: absolute;
 	bottom: 0;
 	text-align: right;
@@ -276,13 +276,16 @@ a#cancel-comment-reply-link:hover {
 	margin: 0;
 	padding: 0;
 	display: block;
-	height: 130px;
+	height: 100%;
 	@media only screen and (min-width:0) and (max-width: $teenbreak) {
 		display: none;
 		height: 0;
 	}
 }
-
+.excerpt a {
+	height: 100%;
+	display: block;
+}
 .excerpt span {
 	display: none;
 }

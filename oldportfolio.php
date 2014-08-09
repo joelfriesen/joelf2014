@@ -6,7 +6,7 @@ Template Name: Older Portfolio
 <?php get_header(); ?>
 <div id="content">
 	<div class="container col4">
-		<div  class="col">&nbsp;
+		<div  class="col">
 			<?php dynamic_sidebar('portfolio-sidebar-area') ?>
 		</div>
 		<div class="col span3">
@@ -16,7 +16,6 @@ Template Name: Older Portfolio
 				<div>
 				  <?php the_content("more &gt;&gt;"); ?>
 				</div>
-				<?php comments_template(); ?>
 			  <?php endwhile; ?>        
 			<?php else : ?>
 			  <h2><?php _e('Oops! Page not found!'); ?></h2>

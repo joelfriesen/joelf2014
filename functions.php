@@ -109,6 +109,16 @@ register_sidebar(array(
  'after_title' => '</h3>',
  ));
 
+register_sidebar(array(
+ 'name' => __( 'sayhello' ),
+ 'id' => 'sayhello',
+ 'description' => __( 'sayhello' ),                  
+ 'before_widget' => '',
+ 'after_widget' => '',
+ 'before_title' => '<h4 class="indexintro">',
+ 'after_title' => '</h4>',
+ ));
+
  register_sidebar(array(
  'name' => __( 'Footer Text' ),
  'id' => 'footer',

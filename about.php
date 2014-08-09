@@ -6,7 +6,7 @@ Template Name: About
 <?php get_header(); ?>
 <div id="content">
 	<div class="container col4">
-		<div  class="col">&nbsp;
+		<div  class="col">
 			<?php dynamic_sidebar('about-sidebar-area') ?>
 			<?php the_meta(); ?>
 		</div>

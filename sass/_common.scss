@@ -69,20 +69,19 @@ a[href~='mailto:'] {
     margin-left: 0.2em;
     font-size: 0.9em;
     color: $splashcolor;
-    font-family: 'FontAwesome';
         &:hover{
         color: #000;
     }
 }
 a[href$='.ppt']:after {
-    content: "- \f0f6    PPT";
+    content: "- PPT";
 }
 a[href$='.xls']:after {
-    content: "- \f0f6    XLS";
+    content: "- XLS";
 }
 a[href$='.doc']:after,
 a[href$='.docx']:after {
-    content: "- \f0f6    DOC";
+    content: "- DOC";
 }
 
 a[href$='.pdf']:after {

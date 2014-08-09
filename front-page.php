@@ -17,7 +17,7 @@
     <div id="slider" class="rslides_container">
       <ul class="rslides rslides2">
         <li class="slide1">
-          <div>A <strong>one-man web design shop</strong> specializing in small and medium sized businesses.</div>
+          <div>A <strong>one-man web design shop</strong> specializing in clean design and accessible, standards based coding.</div>
         </li>
         <li class="slide2">
           <div>I am the <strong>Lead instructor</strong> and <strong>creator</strong> of the <a href="http://camosun.ca/learn/programs/webfoundations/">Web Foundations Program</a> at Camosun College, Victoria B.C.</div>
@@ -50,7 +50,7 @@
         <div class="contentbox">
           <h4 class="indexintro"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
           <?php the_content('',TRUE,''); ?>
-          <div class="excerpt"><span>…</span></div>
+          <div class="excerpt"><a href="<?php the_permalink(); ?>"><span>…</span></a></div>
         </div>
         <a href="<?php the_permalink(); ?>" class="more-link">Read More</a>
       <?php endwhile; wp_reset_postdata(); ?>
@@ -64,7 +64,7 @@
         <div class="contentbox">
           <h4 class="indexintro"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
           <?php the_content('',TRUE,''); ?>
-          <div class="excerpt"><span>…</span></div>
+          <div class="excerpt"><a href="<?php the_permalink(); ?>"><span>…</span></a></div>
         </div>
         <a href="<?php the_permalink(); ?>" class="more-link">Read More</a>
       <?php endwhile; wp_reset_postdata(); ?>
@@ -78,28 +78,25 @@
           <div class="contentbox">
             <h4 class="indexintro"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
             <?php the_content('',TRUE,''); ?>
-            <div class="excerpt"><span>…</span></div>
+            <div class="excerpt"><a href="<?php the_permalink(); ?>"><span>…</span></a></div>
           </div>
           <a href="<?php the_permalink(); ?>" class="more-link">Read More</a>
       <?php endwhile; wp_reset_postdata(); ?>
     </div>
 
     <div class="col last">
-      <h4 class="indexintro">Say Hello</h4>
+<h4 class="indexintro">Say hello!</h4>
       <form class="uniForm" action="/fm.php" method="post">
         <input type="hidden" name="recipient" value="emailaddress" />
         <input type="hidden" name="subject" value=" - from joelf.com" />
-        <input type="hidden" name="required" value="subject_prefix,email" />
         <input type="hidden" name="alias" value="email=E-mail Address,subject_prefix=Your Name,comments=Comments" />
         <input type="hidden" name="redirect" value="/thankyou/" />
         <fieldset class="blocklabels">
           <div class="row">
             <label for="subject_prefix">Name</label><input id="subject_prefix" class="textinput" type="text" name="subject_prefix" />
-            
           </div>
           <div class="row">
             <label for="email">Email</label><input id="email" class="textinput" type="text" name="email" />
-            
           </div>
           <div class="row">
             <label for="comments">Comments</label>

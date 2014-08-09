@@ -67,10 +67,12 @@ h3.indexintro {
 
 .indexintro a {
     text-decoration: none;
+    color:inherit;
 }
 
 .indexintro a:hover,  .indexintro a:focus {
     text-decoration: none;
+    color:inherit;
 }
 
 #fbsharebutton {
@@ -102,20 +104,20 @@ h3.indexintro {
 #logo h1 {
     font-family: $googlefont1;
     text-transform: uppercase;
-    letter-spacing: 0;
-    word-spacing: 0;
     font-style: normal;
     font-weight: normal;
     padding: 0;
     margin: 0;
-    font-size: 6.2em;
-    text-align: justify;
-    text-align-last: justify;
+     @media only screen and (min-width: $mamabreak) {
+        font-size: 6.2em;
+        letter-spacing: .5px;
+    }
     @media only screen and (min-width: $teenbreak) and (max-width: $mamabreak) {
-        font-size: 5.0em;
+        font-size: 5.1em;
+        letter-spacing: 0.9px;
     }
     @media only screen and (min-width: 0) and (max-width: $teenbreak) {
-        font-size: 3em;
+        font-size: 11.6vw;
         text-align: center;
     }
 }
@@ -124,22 +126,25 @@ h3.indexintro {
     font-family: $googlefont1;
     font-style: normal;
     font-weight: normal;
-    letter-spacing: 0;
     line-height: 1.2em;
+    color:#000;
     margin: 0;
     padding: 0;
     text-transform: uppercase;
     word-spacing: 0;
-    font-size: 1.7em;
-    text-align: justify;
-    text-align-last: justify;
+    @media only screen and (min-width: $mamabreak) {
+        font-size: 1.75em;
+        letter-spacing: .8px;
+    }
     @media only screen and (min-width: $teenbreak) and (max-width: $mamabreak) {
-        font-size: 1.4em;
+        font-size: 1.45em;
+        letter-spacing: .7px;
     }
     @media only screen and (min-width: 0) and (max-width: $teenbreak) {
-        font-size: 1.5em;
+        font-size: 3.4vw;
         text-align: center;
     }
+
 }
 
 #logo a {
@@ -150,17 +155,27 @@ h3.indexintro {
 
 .tagline {
     font-family: $googlefont1;
-    color: #666;
+    color: #999;
     margin: 0;
-    text-align: justify;
-    text-align-last: justify;
+    font-size: 1.2em;
+    letter-spacing: 1.2px;
     @media only screen and (min-width: $teenbreak) and (max-width: $mamabreak) {
-        font-size: .8em;
+        font-size: 1em;
+        letter-spacing: .9px;
     }
     @media only screen and (min-width: 0) and (max-width: $teenbreak) {
         font-size: 1em;
         text-align: center;
     }
+}
+@media only screen and (min-width:0) and (max-width: $teenbreak) {
+    p.tagline:after{
+            content: "250-884-2563";
+            display: block;
+            font-size: 1.5em;
+            color: $splashcolor;
+            margin: 1em 0;
+        }
 }
 
 .orange {
@@ -226,27 +241,27 @@ h3.indexintro {
 }
 
 #slider li.slide1 {
-    background: url(/images/1.jpg) no-repeat;
+    background: url(/images/11.jpg) no-repeat;
     background-size: contain;
 }
 
 #slider li.slide2 {
-    background: url(/images/2.jpg) no-repeat;
+    background: url(/images/21.jpg) no-repeat;
     background-size: contain;
 }
 
 #slider li.slide3 {
-    background: url(/images/3.jpg) no-repeat;
+    background: url(/images/31.jpg) no-repeat;
     background-size: contain;
 }
 
 #slider li.slide4 {
-    background: url(/images/4.jpg) no-repeat;
+    background: url(/images/41.jpg) no-repeat;
     background-size: contain;
 }
 
 #slider li.slide5 {
-    background: url(/images/5.jpg) no-repeat;
+    background: url(/images/51.jpg) no-repeat;
     background-size: contain;
 }
 
@@ -288,13 +303,13 @@ h3.indexintro {
 
 .footer {
     background: #FFF;
-    background-image: -webkit-linear-gradient(top, #eee, #fff 20%);
-    background-image: -moz-linear-gradient(top, #eee, #fff 20%);
-    background-image: -ms-linear-gradient(top, #eee, #fff 20%);
-    background-image: -o-linear-gradient(top, #eee, #fff 20%);
-    background-image: linear-gradient(top, #eee, #fff 20%);
+    background-image: -webkit-linear-gradient(top, #dedede, #fff 20%);
+    background-image: -moz-linear-gradient(top, #dedede, #fff 20%);
+    background-image: -ms-linear-gradient(top, #dedede, #fff 20%);
+    background-image: -o-linear-gradient(top, #dedede, #fff 20%);
+    background-image: linear-gradient(top, #dedede, #fff 20%);
     .contentbox {
-        height: 415px;
+        height: 420px;
         @media only screen and (min-width: 0) and (max-width: $teenbreak) {
             height: auto;
         }

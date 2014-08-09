@@ -44,22 +44,13 @@
   ================================================== -->
   <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/style.css" />  
   <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/js/fancybox/jquery.fancybox-1.3.4.css" />
-  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet" />
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Muli|Raleway:100" />
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Muli|Raleway" />
 	
   
   <!-- JQuery, analytics and scripts
   ================================================== -->   
-  <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/menu.js"></script>
-  <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/uniform.js"></script>
-  <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/responsiveslides.min.js"></script>
-	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/fancybox/jquery.easing-1.3.pack.js"></script>
-	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
-	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
-	<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/fancysettings.js"></script>
-  <!--[if lt IE 9]>
-		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
+  <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/fancybox/jquery.fancybox-1.3.4.pack.js"></script>
+  <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/joelf.com.min.js"></script>
   <script type="text/javascript">
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -70,7 +61,6 @@
   ga('send', 'pageview');
   </script>
   <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
-  
 </head>
 
 <body>
@@ -85,11 +75,11 @@
         &nbsp;
       </div>
       <div class="col span3">
-        <h1><a href="<?php bloginfo('url'); ?>"><span class="blue">Joel</span> <span class="orange">Friesen</span></a></h1>
-        <h2 class="grey">
+        <h1 id="fittext1"><a href="<?php bloginfo('url'); ?>"><span class="blue">Joel</span> <span class="orange">Friesen</span></a></h1>
+        <h2 id="fittext2">
           <?php bloginfo('description'); ?>
         </h2>
-        <p class="tagline">A one-man web design shop specializing in small and medium sized businesses.</p>
+        <p class="tagline">Specializing in clean design and accessible, standards based coding.</p>
       </div>
     </div>
   </div> 

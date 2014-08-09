@@ -4,7 +4,7 @@ die ('Please do not load this page directly. Thanks!');
 if ( post_password_required() ) { ?>
 	<p class="nocomments">This post is password protected. Enter the password to view comments.</p>
 <?php return; } ?>
-	<div class="commentsarea">
+	<div class="commentsarea" id="commentarea">
 		<?php if ( have_comments() ) : ?>
 			<h3 id="comments"><?php comments_number('No Responses', 'One Response', '% Responses' );?> to &#8220;<?php the_title(); ?>&#8221;</h3>
 			<ol class="commentlist">

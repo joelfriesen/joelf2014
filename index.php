@@ -4,8 +4,8 @@
 		<div  class="col">
 			<ul class="menu">
 				<li>
-					<?php previous_posts_link('Newer news'); ?>
-					<?php next_posts_link('Older news'); ?>
+					<?php previous_posts_link('Newer posts'); ?>
+					<?php next_posts_link('Older posts'); ?>
 				</li>
 			</ul>
 			<?php dynamic_sidebar('news-sidebar-area') ?>
@@ -34,9 +34,10 @@
 			</div>
 			<?php endwhile; ?>
 			<?php endif; ?>
-			<div class="newsbuttons">
-				<div class="alignleft menu"><?php previous_posts_link('Newer news'); ?></div>
-				<div class="alignright menu"><?php next_posts_link('Older news'); ?></div>
+			<div class="newsbuttons container col3">
+				<div class="alignleft menu col rowholder"><?php previous_posts_link('Newer posts'); ?></div>
+				<div class="col">&nbsp;</div>
+				<div class="alignright menu col "><?php next_posts_link('Older posts'); ?></div>
 			</div>
 		</div>
 	</div>

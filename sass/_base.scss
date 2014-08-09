@@ -189,14 +189,16 @@ blockquote {
     margin: 0.2em 0 0 0;
     padding: 0 0 0 2em;
     font-style: italic;
-    color: $splashcolor;
+    color: $lightcolor;
     min-height: 3em;
     &:before {
         color: $lightcolor;
-        font: 2em/2em 'FontAwesome';
-        content: "\f10d";
-        float: left;
-        margin: 0 1em 0 0;
+content: "\,,";
+float: left;
+margin: 0em 1em 01em 0;
+display: block;
+font-size: 3em;
+font-family: georgia;
     }
 }
 
