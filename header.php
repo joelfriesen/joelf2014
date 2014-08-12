@@ -44,8 +44,7 @@
   ================================================== -->
   <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/style.css" />  
   <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory'); ?>/js/fancybox/jquery.fancybox-1.3.4.css" />
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Muli|Raleway" />
-	
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Muli:400,400italic|Raleway" />
   
   <!-- JQuery, analytics and scripts
   ================================================== -->   
@@ -75,8 +74,8 @@
         &nbsp;
       </div>
       <div class="col span3">
-        <h1 id="fittext1"><a href="<?php bloginfo('url'); ?>"><span class="blue">Joel</span> <span class="orange">Friesen</span></a></h1>
-        <h2 id="fittext2">
+        <h1><a href="<?php bloginfo('url'); ?>"><span class="blue">Joel</span> <span class="orange">Friesen</span></a></h1>
+        <h2>
           <?php bloginfo('description'); ?>
         </h2>
         <p class="tagline">Specializing in clean design and accessible, standards based coding.</p>

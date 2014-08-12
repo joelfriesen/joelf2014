@@ -2,7 +2,7 @@
 Theme Name: joelf2014
 Theme URI: https://joelf.com/
 Description: Joelf.com's default theme
-Version: 3.0
+Version: 3.5
 Author: Joel Friesen 
 Author URI: http://joelf.com/
 */
@@ -110,14 +110,15 @@ h3.indexintro {
     margin: 0;
      @media only screen and (min-width: $mamabreak) {
         font-size: 6.2em;
-        letter-spacing: .5px;
+        letter-spacing: .4px;
     }
     @media only screen and (min-width: $teenbreak) and (max-width: $mamabreak) {
         font-size: 5.1em;
-        letter-spacing: 0.9px;
+        letter-spacing: 0.8px;
     }
     @media only screen and (min-width: 0) and (max-width: $teenbreak) {
         font-size: 11.6vw;
+        letter-spacing: -0.3vw;
         text-align: center;
     }
 }
@@ -134,14 +135,15 @@ h3.indexintro {
     word-spacing: 0;
     @media only screen and (min-width: $mamabreak) {
         font-size: 1.75em;
-        letter-spacing: .8px;
+        letter-spacing: .7px;
     }
     @media only screen and (min-width: $teenbreak) and (max-width: $mamabreak) {
         font-size: 1.45em;
-        letter-spacing: .7px;
+        letter-spacing: .6px;
     }
     @media only screen and (min-width: 0) and (max-width: $teenbreak) {
         font-size: 3.4vw;
+        letter-spacing: -0.2vw;
         text-align: center;
     }
 
@@ -161,7 +163,7 @@ h3.indexintro {
     letter-spacing: 1.2px;
     @media only screen and (min-width: $teenbreak) and (max-width: $mamabreak) {
         font-size: 1em;
-        letter-spacing: .9px;
+        letter-spacing: .8px;
     }
     @media only screen and (min-width: 0) and (max-width: $teenbreak) {
         font-size: 1em;
@@ -302,7 +304,7 @@ h3.indexintro {
 }
 
 .footer {
-    background: #FFF;
+    background: #dedede;
     background-image: -webkit-linear-gradient(top, #dedede, #fff 20%);
     background-image: -moz-linear-gradient(top, #dedede, #fff 20%);
     background-image: -ms-linear-gradient(top, #dedede, #fff 20%);
